@@ -1,0 +1,31 @@
+import { BaseComponent, ComponentConstructor } from '../BaseComponent';
+import { BaseOutput, OutputConstructor } from '../BaseOutput';
+import { ComponentMetadata } from './ComponentMetadata';
+import { ComponentOptionMetadata } from './ComponentOptionMetadata';
+import { HandlerMetadata } from './HandlerMetadata';
+import { HandlerOptionMetadata } from './HandlerOptionMetadata';
+import { OutputMetadata } from './OutputMetadata';
+export declare class MetadataStorage {
+    private static instance;
+    readonly componentMetadata: ComponentMetadata[];
+    readonly componentOptionMetadata: ComponentOptionMetadata[];
+    readonly handlerMetadata: HandlerMetadata[];
+    readonly handlerOptionMetadata: HandlerOptionMetadata[];
+    readonly outputMetadata: OutputMetadata[];
+    private constructor();
+    static getInstance(): MetadataStorage;
+    addComponentMetadata<COMPONENT extends BaseComponent>(metadata: ComponentMetadata<COMPONENT>): void;
+    getComponentMetadata<COMPONENT extends BaseComponent>(target: ComponentConstructor<COMPONENT> | Function): ComponentMetadata<COMPONENT> | undefined;
+    getMergedComponentMetadata<COMPONENT extends BaseComponent>(target: ComponentConstructor<COMPONENT> | Function): ComponentMetadata<COMPONENT> | undefined;
+    addComponentOptionMetadata<COMPONENT extends BaseComponent>(metadata: ComponentOptionMetadata<COMPONENT>): void;
+    getComponentOptionMetadata<COMPONENT extends BaseComponent>(target: ComponentConstructor<COMPONENT> | Function): ComponentOptionMetadata<COMPONENT>[];
+    addOutputMetadata<OUTPUT extends BaseOutput>(target: OutputConstructor<OUTPUT>, name: string): void;
+    getOutputMetadata<OUTPUT extends BaseOutput>(target: OutputConstructor<OUTPUT> | Function): OutputMetadata<OUTPUT> | undefined;
+    getOutputMetadataByName<OUTPUT extends BaseOutput>(name: string): OutputMetadata<OUTPUT> | undefined;
+    addHandlerMetadata<COMPONENT extends BaseComponent, KEY extends keyof COMPONENT>(metadata: HandlerMetadata<COMPONENT, KEY>): void;
+    getHandlerMetadataOfComponent<COMPONENT extends BaseComponent>(target: ComponentConstructor<COMPONENT> | Function): HandlerMetadata<COMPONENT, keyof COMPONENT>[];
+    getMergedHandlerMetadataOfComponent<COMPONENT extends BaseComponent>(target: ComponentConstructor<COMPONENT> | Function): HandlerMetadata<COMPONENT, keyof COMPONENT>[];
+    addHandlerOptionMetadata<COMPONENT extends BaseComponent, KEY extends keyof COMPONENT>(metadata: HandlerOptionMetadata<COMPONENT, KEY>): void;
+    getHandlerOptionMetadataOfComponent<COMPONENT extends BaseComponent>(target: ComponentConstructor<COMPONENT> | Function): HandlerOptionMetadata<COMPONENT, keyof COMPONENT>[];
+    clearAll(): void;
+}

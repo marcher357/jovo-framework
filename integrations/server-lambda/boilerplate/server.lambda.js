@@ -1,6 +1,8 @@
-import { Lambda } from '@jovotech/server-lambda';
-import { app } from './app';
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.handler = void 0;
+const server_lambda_1 = require("@jovotech/server-lambda");
+const app_1 = require("./app");
 /*
 |--------------------------------------------------------------------------
 | LAMBDA CONFIGURATION
@@ -10,8 +12,9 @@ import { app } from './app';
 | Learn more here: https://www.jovo.tech/marketplace/server-lambda
 |
 */
-
-export const handler = async (event, context, callback) => {
-  await app.initialize();
-  await app.handle(new Lambda(event, context, callback));
+const handler = async (event, context, callback) => {
+    await app_1.app.initialize();
+    await app_1.app.handle(new server_lambda_1.Lambda(event, context, callback));
 };
+exports.handler = handler;
+//# sourceMappingURL=server.lambda.js.map

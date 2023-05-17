@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SUGGESTION_TEXT_MAX_LENGTH = exports.SUGGESTIONS_MAX_SIZE = exports.CAROUSEL_MAX_SIZE = exports.CAROUSEL_MIN_SIZE = exports.CARD_CONTENT_DESCRIPTION_MAX_LENGTH = exports.CARD_CONTENT_TITLE_MAX_LENGTH = exports.CARD_CONTENT_SUGGESTIONS_MAX_SIZE = void 0;
+exports.CARD_CONTENT_SUGGESTIONS_MAX_SIZE = 4;
+exports.CARD_CONTENT_TITLE_MAX_LENGTH = 200;
+exports.CARD_CONTENT_DESCRIPTION_MAX_LENGTH = 2000;
+exports.CAROUSEL_MIN_SIZE = 2;
+exports.CAROUSEL_MAX_SIZE = 10;
+exports.SUGGESTIONS_MAX_SIZE = 13;
+exports.SUGGESTION_TEXT_MAX_LENGTH = 25;
+//# sourceMappingURL=constants.js.map
