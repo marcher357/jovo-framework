@@ -19,6 +19,7 @@ export interface SpeechSynthesizerEventListenerMap extends EventListenerMap {
 export interface SpeechSynthesizerConfig {
     enabled: boolean;
     language: string;
+    rate?: number;
     voice?: SpeechSynthesisVoice;
 }
 export declare class SpeechSynthesizer extends TypedEventEmitter<SpeechSynthesizerEventListenerMap> {

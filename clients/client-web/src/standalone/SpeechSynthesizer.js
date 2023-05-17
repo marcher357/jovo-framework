@@ -85,6 +85,9 @@ class SpeechSynthesizer extends TypedEventEmitter_1.TypedEventEmitter {
             if (this.config.voice) {
                 utterance.voice = this.config.voice;
             }
+            if (this.config.rate) {
+                utterance.rate = this.config.rate;
+            }
             utterance.onerror = (e) => {
                 this.isSpeakingUtterance = false;
                 this.emit(SpeechSynthesizerEvent.Error, e);

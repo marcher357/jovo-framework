@@ -101,8 +101,8 @@ class Client extends TypedEventEmitter_1.TypedEventEmitter {
             }
         });
         this.on(ClientEvent.RepromptLimitReached, () => {
-            this.store.resetSession();
-            this.store.save();
+            // this.store.resetSession();
+            // this.store.save();
         });
         this.on(ClientEvent.Input, async (input) => {
             await this.send(input);

@@ -4,6 +4,7 @@ import { RecordingModality } from './RecordingStrategy';
 export interface RepromptHandlerConfig {
     enabled: boolean;
     maxAttempts: number;
+    resetSessionOnRepromptLimit: boolean;
 }
 export type RepromptType = NormalizedOutputTemplate['reprompt'];
 export declare class RepromptProcessor {

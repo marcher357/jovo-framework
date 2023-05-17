@@ -10,6 +10,7 @@ class RepromptProcessor {
         return {
             enabled: true,
             maxAttempts: 1,
+            resetSessionOnRepromptLimit: false,
         };
     }
     constructor(client) {
