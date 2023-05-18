@@ -22,7 +22,8 @@ export interface SpeechSynthesizerEventListenerMap extends EventListenerMap {
 export interface SpeechSynthesizerConfig {
   enabled: boolean;
   language: string;
-  rate?: number; 
+  rate?: number;
+  pitch?: number; 
   voice?: SpeechSynthesisVoice;
 }
 
@@ -113,6 +114,9 @@ export class SpeechSynthesizer extends TypedEventEmitter<SpeechSynthesizerEventL
       }
       if (this.config.rate) {
         utterance.rate = this.config.rate;
+      }
+      if (this.config.pitch) {
+        utterance.pitch = this.config.pitch;
       }
 
       utterance.onerror = (e) => {
