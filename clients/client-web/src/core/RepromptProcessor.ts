@@ -52,7 +52,7 @@ export class RepromptProcessor {
     // Additionally all other event listeners should be removed in order to not have issues if another input-class is used in the next reprompt
     this.removeInputEventListeners();
 
-    if (this.attempts < this.config.maxAttempts) {
+    if (this.attempts < this.config.maxAttempts || this.config.resetSessionOnRepromptLimit === false) {
       return this.handleReprompts();
     } else {
       return this.handleRepromptLimitReached();

@@ -183,8 +183,8 @@ export class Client extends TypedEventEmitter<ClientEventListenerMap> {
     });
 
     this.on(ClientEvent.RepromptLimitReached, () => {
-      // this.store.resetSession();
-      // this.store.save();
+      this.store.resetSession();
+      this.store.save();
     });
 
     this.on(ClientEvent.Input, async (input) => {
